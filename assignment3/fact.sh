@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#All credit for this code goes to ChatGPT version 3.5, but the grade will go to James and Pratik
+
 # Function to calculate factorial
 factorial() {
     if (( $1 <= 1 )); then
