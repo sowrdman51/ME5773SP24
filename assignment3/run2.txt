@@ -1,0 +1,5 @@
+JobID             State    Elapsed  Timelimit        NodeList      NCPUS 
+------------ ---------- ---------- ---------- --------------- ---------- 
+349624        COMPLETED   00:00:14   00:59:00            c005          2 
+349624.batch  COMPLETED   00:00:14                       c005          2 
+349624.exte+  COMPLETED   00:00:14                       c005          2 

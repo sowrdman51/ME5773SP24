@@ -7,9 +7,9 @@
 #SBATCH -e myjob.e%j # Name of stderr error file
 #SBATCH -p compute1 # Queue (partition) name
 #SBATCH -N 1 # Total # of nodes (must be 1 for serial)
-#SBATCH -n 80 # Total # of mpi tasks (should be 1 for serial)
+#SBATCH -n 40 # Total # of mpi tasks (should be 1 for serial)i
 #SBATCH -t 00:59:00 # Run time (hh:mm:ss)
-#SBATCH --ntasks=1 #Number of Tasks
+#SBATCH --ntasks=2 #Number of Tasks
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=pratik.mitra@my.utsa.edu
 
