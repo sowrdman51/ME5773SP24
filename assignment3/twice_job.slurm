@@ -6,10 +6,17 @@
 #SBATCH -o myjob.o%j # Name of the stdout output file
 #SBATCH -e myjob.e%j # Name of stderr error file
 #SBATCH -p compute1 # Queue (partition) name
+<<<<<<< HEAD
 #SBATCH -N 1 # Total # of nodes (must be 1 for serial)
 #SBATCH -n 80 # Total # of mpi tasks (should be 1 for serial)
 #SBATCH -t 00:59:00 # Run time (hh:mm:ss)
 #SBATCH --ntasks=1 #Number of Tasks
+=======
+#SBATCH -N 2 # Total # of nodes (must be 1 for serial)
+#SBATCH -n 40 # Total # of mpi tasks (should be 1 for serial)
+#SBATCH -t 00:59:00 # Run time (hh:mm:ss)
+#SBATCH --ntasks=4                     # It should be 1 for all non-MPI jobs. Otherwise, the same application will run multiple times 
+>>>>>>> 39e8a2f81c609c8ed03846225aacf7896bdcf7d0
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=pratik.mitra@my.utsa.edu
 
