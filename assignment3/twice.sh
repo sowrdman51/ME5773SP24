@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# All credit for this code goes to ChatGPT 3.5. The grade will go to Pratik and James! :)
+
 # Check if an argument is provided
 if [ $# -eq 0 ]; then
     echo "Usage: $0 <N>"
