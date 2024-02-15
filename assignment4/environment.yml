@@ -2,10 +2,13 @@ name: envTeam6
 channels:
   - anaconda
   - conda-forge
+  - pip
 dependencies:
-  - python=3.12.1
+  - python=3.10
   - numpy
   - scipy
   - numexpr
-  - gmsh=4.12
   - tensorflow=2.15
+  - pip 
+  - pip:
+    - gmsh
