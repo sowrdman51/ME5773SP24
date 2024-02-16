@@ -1,8 +1,8 @@
-mport numpy as np
+import numpy as np
 import time
 
 # Create an integer variable N
-N = 5
+N = 10000
 
 # Print the value of N
 print("N:", N)

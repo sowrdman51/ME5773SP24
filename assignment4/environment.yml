@@ -1,4 +1,5 @@
 name: envTeam6
+
 channels:
   - anaconda
   - conda-forge

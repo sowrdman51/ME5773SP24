@@ -1,0 +1,43 @@
+The anaconda3  module version current  is loaded.
+
+
+N: 10000
+Time elapsed for creating K and f: 0.172075272 seconds
+Time elapsed for solving Ku = f: 8.330113173 seconds
+Solution vector u: [1.000e-04 2.000e-04 3.000e-04 ... 9.998e-01 9.999e-01 1.000e+00]
+u_N: 1.0000000000123226
+N: 10000
+Time elapsed for creating K and f: 0.156526566 seconds
+Time elapsed for solving Ku = f: 4.013607502 seconds
+Solution vector u: [1.000e-04 2.000e-04 3.000e-04 ... 9.998e-01 9.999e-01 1.000e+00]
+u_N: 1.0000000000123226
+N: 10000
+Time elapsed for creating K and f: 0.163066626 seconds
+Time elapsed for solving Ku = f: 2.370711803 seconds
+Solution vector u: [1.000e-04 2.000e-04 3.000e-04 ... 9.998e-01 9.999e-01 1.000e+00]
+u_N: 1.0000000000123226
+N: 10000
+Time elapsed for creating K and f: 0.167532444 seconds
+Time elapsed for solving Ku = f: 1.418855190 seconds
+Solution vector u: [1.000e-04 2.000e-04 3.000e-04 ... 9.998e-01 9.999e-01 1.000e+00]
+u_N: 1.0000000000123226
+N: 10000
+Time elapsed for creating K and f: 0.167713642 seconds
+Time elapsed for solving Ku = f: 1.088944197 seconds
+Solution vector u: [1.000e-04 2.000e-04 3.000e-04 ... 9.998e-01 9.999e-01 1.000e+00]
+u_N: 1.0000000000123226
+N: 10000
+Time elapsed for creating K and f: 0.161231518 seconds
+Time elapsed for solving Ku = f: 0.947818518 seconds
+Solution vector u: [1.000e-04 2.000e-04 3.000e-04 ... 9.998e-01 9.999e-01 1.000e+00]
+u_N: 1.0000000000123226
+N: 10000
+Time elapsed for creating K and f: 0.159842968 seconds
+Time elapsed for solving Ku = f: 1.013068914 seconds
+Solution vector u: [1.000e-04 2.000e-04 3.000e-04 ... 9.998e-01 9.999e-01 1.000e+00]
+u_N: 1.0000000000123226
+N: 10000
+Time elapsed for creating K and f: 0.164081812 seconds
+Time elapsed for solving Ku = f: 0.898612976 seconds
+Solution vector u: [1.000e-04 2.000e-04 3.000e-04 ... 9.998e-01 9.999e-01 1.000e+00]
+u_N: 1.0000000000123226
