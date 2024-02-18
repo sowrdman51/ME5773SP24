@@ -35,3 +35,36 @@ Elapsed = Stop-Start
 
 print(f"{Elapsed:.6f}")
 print(f"{F1:.16f}")
+
+#### Vectorized Function 
+
+vec_Start = time.time()
+
+i_vec = np.arrange(N)
+
+x_vec = (2*i_vec/N) - 1
+F_vec = np.sqrt(4-4*(x_vec**2))
+F2 = np.sum(F_vec)
+
+vec_Stop = time.time()
+vec_Elapsed = vec_Stop - vec_Start
+
+print(f"{vec_Elapsed:.6f}")
+
+##### Numexpr Evaluations 
+
+Numexpr_Start = time.time()
+
+i_vec = np.arrange(N)
+
+x_vec = numexpr.evaluate('(2 * i_vec / N) - 1')
+
+F_vec = numexpr.evaluate('sqrt(4-(4 * (x_vec^^2)))')
+
+F3 = numexpr.evaluate('sum(F_vec)')
+
+NumexprStop = time.time()
+
+NumexprElapsed = NumexprStop - NumexprStart
+
+print(f"{NumexprElapsed:.6f}")
