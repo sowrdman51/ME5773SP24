@@ -10,7 +10,7 @@ import numexpr
 import time
 
 #Initialize Variables 
-N = 10**9
+N = 10**3
 deltax = 2/N
 
 ##### Code 
@@ -40,7 +40,7 @@ print(f"{F1:.16f}")
 
 vec_Start = time.time()
 
-i_vec = np.arrange(N)
+i_vec = np.arange(N)
 
 x_vec = (2*i_vec/N) - 1
 F_vec = np.sqrt(4-4*(x_vec**2))
@@ -53,13 +53,13 @@ print(f"{vec_Elapsed:.6f}")
 
 ##### Numexpr Evaluations 
 
-Numexpr_Start = time.time()
+NumexprStart = time.time()
 
-i_vec = np.arrange(N)
+i_vec = np.arange(N)
 
 x_vec = numexpr.evaluate('(2 * i_vec / N) - 1')
 
-F_vec = numexpr.evaluate('sqrt(4-(4 * (x_vec^^2)))')
+F_vec = numexpr.evaluate('sqrt(4-(4 * (x_vec**2)))')
 
 F3 = numexpr.evaluate('sum(F_vec)')
 
