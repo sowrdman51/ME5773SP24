@@ -13,7 +13,7 @@ module load anaconda3
 N=10000
 
 # Loop over different values of OMP_NUM_THREADS
-for threads in 1 2 4 8 16 32 64 80; do
+for threads in 1 2 4 8 16 20 40; do
     export OMP_NUM_THREADS=$threads
 
     # Run the Python script

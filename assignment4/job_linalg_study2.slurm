@@ -13,7 +13,7 @@ module load anaconda3
 conda activate envTeam6
 
 # Set the environment variable MKL_NUM_THREADS to 1
-export MKL_NUM_THREADS=1
+#export MKL_NUM_THREADS=1
 
 # Define the size N
 N=10000
