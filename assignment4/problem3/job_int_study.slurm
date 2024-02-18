@@ -11,7 +11,7 @@
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=james.smith3@my.utsa.edu
 
-module load Anaconda3
+module load anaconda3
 
 conda activate envTeam6
 
@@ -21,16 +21,16 @@ export NUMEXPR_NUM_THREADS=1
 python3 integral.py
 
 echo " 2 Threads "
-export OPM_NUM_THREADS=2 
+export OMP_NUM_THREADS=2 
 export NUMEXPR_NUM_THREADS=2
 python3 integral.py 
 
 echo " 4 Threads "
-export OPM_NUM_THREADS=4 
+export OMP_NUM_THREADS=4 
 export NUMEXPR_NUM_THREADS=4
 python3 integral.py 	
 
 echo " 8 Threads "
-export OPM_NUM_THREADS=8
+export OMP_NUM_THREADS=8
 export NUMEXPR_NUM_THREADS=8
 python3 integral.py 
