@@ -10,7 +10,7 @@ import numexpr
 import time
 
 #Initialize Variables 
-N = 10**3
+N = 10**9
 deltax = 2/N
 
 ##### Code 
