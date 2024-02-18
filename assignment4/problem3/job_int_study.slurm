@@ -1,3 +1,5 @@
+#!/bin/bash
+
 #SBATCH -J myjob # Job Name
 #SBATCH -o myjob.o%j # Name of the stdout output file
 #SBATCH -e myjob.e%j # Name of stderr error file
