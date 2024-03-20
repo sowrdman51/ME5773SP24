@@ -6,11 +6,13 @@ import h5py
 
 #Matrix A
  
-A = np.matrix(np.random.randint(2,10,size=(5000,5000),dtype=int64,order='F'))
-B = np.matrix(np.random.randint(100,128,size=(5000,5000),dtype=int8,order='C'))
-C = np.matrix(np.ones(5000,5000,dtype=float64) * 0.33, order='C')
-D = np.arange(1001, 1101, dtype=int16).reshape((10, 10), order='F'))
-E = np.arange(350,350.4,0.1,dtype=float32).reshape((2,2),order='C'))
+A = np.random.randint(2,10,size=(5000,5000),dtype=np.int64)
+A = np.matrix(A.reshape((5000,5000), order='F'))
+B = np.random.randint(100,128,size=(5000,5000),dtype=np.int8)
+B = np.matrix(B.reshape((5000,5000), order='C'))
+C = np.matrix(np.ones((5000, 5000), dtype=np.float64) * 0.33).reshape((5000, 5000), order='C')
+D = np.arange(1001, 1101, dtype=np.int16).reshape((10, 10), order='F')
+E = np.arange(350,350.4,0.1,dtype=np.float32).reshape((2,2),order='C')
 
 Start_Time = time.time()
 np.savetxt("A.csv", A, delimiter=",", fmt='%d')
@@ -46,31 +48,31 @@ Start_Time = time.time()
 np.save("A.npy", A)
 End_Time = time.time()
 A_Numpy_Time = End_Time - Start_Time
-print(f" A Numpy Time is {A_Numpy_Time:.4f} "
+print(f" A Numpy Time is {A_Numpy_Time:.4f} ")
 
 Start_Time = time.time()
 np.save("B.npy", B)
 End_Time = time.time()
 B_Numpy_Time = End_Time - Start_Time
-print(f" B Numpy Time is {B_Numpy_Time:.4f} "))
+print(f" B Numpy Time is {B_Numpy_Time:.4f} ")
 
 Start_Time = time.time()
 np.save("C.npy", C)
 End_Time = time.time()
 C_Numpy_Time = End_Time - Start_Time
-print(f" C Numpy Time is {C_Numpy_Time:.4f} "))
+print(f" C Numpy Time is {C_Numpy_Time:.4f} ")
 
 Start_Time = time.time()
 np.save("D.npy", D)
 End_Time = time.time()
 D_Numpy_Time = End_Time - Start_Time
-print(f" D Numpy Time is {D_Numpy_Time:.4f} "))
+print(f" D Numpy Time is {D_Numpy_Time:.4f} ")
 
 Start_Time = time.time()
 np.save("E.npy", E)
 End_Time = time.time()
 E_Numpy_Time = End_Time - Start_Time
-print(f" E Numpy Time is {E_Numpy_Time:.4f} "))
+print(f" E Numpy Time is {E_Numpy_Time:.4f} ")
 
 Start_Time = time.time()
 with h5py.File("matrix_db.hdf5", "w") as file:
@@ -84,21 +86,21 @@ with h5py.File("matrix_db.hdf5", "w") as file:
 
 	Database_Time =	time.time()
 	integer_group.create_dataset("B", data=B, compression="gzip", chunks=(1000, 1000))
-        B_Database_Time	= time.time() -	Database_Time
+	B_Database_Time	= time.time() -	Database_Time
 
-        Database_Time =	time.time()
+	Database_Time =	time.time()
 	integer_group.create_dataset("D", data=D)
-        D_Database_Time	= time.time() -	Database_Time
+	D_Database_Time	= time.time() -	Database_Time
 
 	float_group = file.create_group("float_group")
 
-        Database_Time =	time.time()
+	Database_Time =	time.time()
 	float_group.create_dataset("C", data=C, compression="gzip")
-        C_Database_Time	= time.time() -	Database_Time
+	C_Database_Time	= time.time() -	Database_Time
 
-        Database_Time =	time.time()
+	Database_Time =	time.time()
 	float_group.create_dataset("E", data=E)
-        E_Database_Time	= time.time() -	Database_Time
+	E_Database_Time	= time.time() -	Database_Time
 
 End_Time = time.time()
 HDF5_Time = End_Time - Start_Time
