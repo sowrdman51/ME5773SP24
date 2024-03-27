@@ -1,0 +1,323 @@
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 95, in <module>
+    N_local = comm.scatter(N, root=0)
+NameError: name 'N' is not defined
+Traceback (most recent call last):
+  File "Homework7.py", line 78, in <module>
+    comm.scatter(N, root=0)
+  File "mpi4py/MPI/Comm.pyx", line 1267, in mpi4py.MPI.Comm.scatter
+  File "mpi4py/MPI/msgpickle.pxi", line 730, in mpi4py.MPI.PyMPI_scatter
+  File "mpi4py/MPI/msgpickle.pxi", line 119, in mpi4py.MPI.Pickle.dumpv
+ValueError: expecting 80 items, got 20
