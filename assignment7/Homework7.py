@@ -1,5 +1,6 @@
 import math
-import mpi 
+from mpi4py import MPI
+import numpy as np
 
 # This code was written by James Smith to perform Gaussian Integration 
 
@@ -55,8 +56,22 @@ def gauleg(x1, x2, x, w, n):
 
 ## --- Master ---
 if rank == 0:
+    
+    # Generate Quadrature Number 
     N = list(range(1,21))
-    # Compute the Quadrature
+    
+    # Integration Bounds 
+    x1 = -1
+    x2 = 1
+    
+    # Weights
+    w = 
+    # Integration Points (x values)
+
+
+    ### Compute the Quadrature ###
+    
+
     # Send the Quadrature to the Workers 
     # Collect the results from each worker
     # Compute the table 
