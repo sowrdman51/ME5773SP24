@@ -1,0 +1,148 @@
+
+import numpy as np
+import time
+import multiprocessing
+
+    #time_whole = time.start()
+
+def assemble(e, Ke, fe, Kg, fg):
+    """
+    DESCRIPTION: Assemble an element's system matrix and rhs into a global
+                 system of equations for 1D Finite Element problem.
+                 
+                 This assembly function only supports linear elastic problems
+                 of springs assembled in the form:
+               
+            x-^^-x-^^-x-^^-x...x-^^-x-^^-x-^^-x
+
+   
+    INPUTS:
+        -e: (integer) Element index.
+        -Ke: (Float array, Shape: (2,2) ) Elemental stiffness matrix.
+        -fe: (Float array, Shape: (2,) )  Elemental force vector.
+        -Kg: (Float array, Shape: (2,2) ) Global stiffness matrix.
+        -fg: (Float array, Shape: (2,) )  Global force vector.
+   
+    OUTPUTS:
+        Nothing, global inputs are modified.
+
+    """
+   
+    #time_whole = time.start()
+
+    for i in range(2):
+        for j in range(2):
+            Kg[e+i, e+j] = Kg[e+i, e+j] + Ke[i, j]
+        # end for
+    # end for
+
+
+def elasticElement(e, k_list):
+    """
+    DESCRIPTION: Assemble an element's system of equation into a global
+                 system of equations for 1D Finite Element problem.
+                 
+                 This assembly function only supports linear elastic problems
+                 of springs assembled in the form:
+               
+            x-^^-x-^^-x-^^-x...x-^^-x-^^-x-^^-x
+           
+   
+    INPUTS:
+        -e: (integer) Element index.
+        -k_list: (List of floats, len: Ne ) Element stiffness values. Ne: Number of elements.
+       
+    OUTPUTS:
+        - Ke: Elemental stifness matrix
+        - fe: Elemental force vector.
+
+    """
+   
+    Ke = k_list[e] * np.array([[1, -1],
+                                [-1, 1]])
+
+    fe = np.array([0.0, 0.0])
+   
+    return Ke, fe
+
+
+def elasticFEProblem(args):
+    """
+    DESCRIPTION: This function assembles the global stiffness matrix for a sequence
+                 of spring elements, arranged in the following manner:
+               
+            x-^^-x-^^-x-^^-x...x-^^-x-^^-x-^^-x
+
+    INPUTS:
+        - args: Tuple containing Ndof, start_element, end_element, and k_list
+
+    OUTPUTS:
+        - Kg_local: (Float array) Local global stiffness matrix.
+        - fg_local: (Float array)  Local global force vector.
+
+    """
+    Ndof, start_element, end_element, k_list = args
+   
+    # Create the local matrix.
+    Kg_local = np.zeros((Ndof, Ndof))
+    fg_local = np.zeros((Ndof, ))
+
+    for e in range(start_element, end_element):
+
+        # Compute element stiffness matrix and load vector.
+        Ke, fe = elasticElement(e, k_list)
+
+        # Assemble the elemental values into the local global components.
+        assemble(e, Ke, fe, Kg_local, fg_local)
+
+    return Kg_local, fg_local
+
+def assemble_worker(args):
+    e_start, e_end, k_list = args
+    Kg_local = np.zeros((Ndof, Ndof))
+    fg_local = np.zeros(Ndof)
+
+    for e in range(e_start, e_end):
+        Ke, fe = elasticElement(e, k_list)
+        assemble(e, Ke, fe, Kg_local, fg_local)
+
+    return Kg_local, fg_local
+
+if __name__ == '__main__':
+    t_start = time.time()
+
+    Ndof = 50000
+    Ne = Ndof - 1
+
+    print('Number of Degrees of freedom: {0}'.format(Ndof))
+
+    k_list = [1] * Ne
+
+    t_start = time.time()
+
+    NUM_PROCESSOR=40
+
+    pool = multiprocessing.Pool(processes=NUM_PROCESSOR)  # Create a Pool object
+
+    chunk_size = 139  # Define the chunk size for domain decomposition
+
+    # Divide the total number of elements into chunks and create argument tuples for each worker
+    args_list = [(i * chunk_size, min((i + 1) * chunk_size, Ne), k_list) for i in range(Ne // chunk_size + 1)]
+
+    # Execute the worker function in parallel
+    results = pool.map(assemble_worker, args_list)
+
+    # Combine the results to obtain the final global stiffness matrix and force vector
+    Kg = np.zeros((Ndof, Ndof))
+    fg = np.zeros(Ndof)
+    for Kg_local, fg_local in results:
+        Kg += Kg_local
+        fg += fg_local
+
+    t_end = time.time()
+
+    print('Total time to assemble:', t_end - t_start)
+
+    #t_end_w = time.time()
+
+    #print('Total time for code:', t_end_w-time_whole)

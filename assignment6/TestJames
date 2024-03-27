@@ -1,0 +1,29 @@
+import multiprocessing
+
+def process_data(data):
+    """Function to process each element of data."""
+    return data ** 2
+
+if __name__ == "__main__":
+    # Input data (list of numbers)
+    data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+    # Number of processes to use
+    num_processes = 4
+
+    # Create a pool of worker processes
+    pool = multiprocessing.Pool(processes=num_processes)
+
+    # Apply process_data function to each element of data in parallel
+    results = pool.map(process_data, data)
+
+    # Close the pool of worker processes
+    pool.close()
+
+    # Wait for all processes to finish
+    pool.join()
+
+    # Print results
+    print("Original data:", data)
+    print("Processed data:", results)
+
