@@ -1,8 +1,12 @@
 import math
 from mpi4py import MPI
 import numpy as np
+import warnings
 
 # This code was written by James Smith to perform Gaussian Integration 
+
+# Suppress Leggauss warning about dividing by Zero
+warnings.filterwarnings("ignore", category=RuntimeWarning)
 
 # Start the MPI Process
 comm = MPI.COMM_WORLD
@@ -42,9 +46,9 @@ if rank == 0:
     ### Compute the Quadrature ###
 
     # Send Data to Workers
-    comm.scatter(N, root=0)
-    comm.scatter(x, root=0)
-    comm.scatter(w, root=0)
+    comm.bcast(N, root=0)
+    comm.bcast(x, root=0)
+    comm.bcast(w, root=0)
  
     # Collect the results from each worker
     int_results=[]
@@ -59,9 +63,9 @@ else:
     print(f"Process {rank} starts") #Displays worker ID
 
     # Receive Data
-    N_local = comm.scatter(N, root=0)
-    x_local = comm.scatter(x, root=0)
-    w_local = comm.scatter(w, root=0) 
+    N_local = comm.bcast(None, root=0)
+    x_local = comm.bcast(None, root=0)
+    w_local = comm.bcast(None, root=0) 
 
     # Takes 3 arrays and isolates data list specific to this worker
     data_local=[N_local[rank-1],x_local[rank-1],w_local[rank-1]]
@@ -79,8 +83,6 @@ else:
 
     # Send Results to Main
     comm.send(result, dest=0)
-
-
 
 
 
