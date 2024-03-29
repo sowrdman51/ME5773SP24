@@ -42,37 +42,55 @@ if rank == 0:
     workers = size - 1
     active_workers = 0
 
+    start_times = [None] * 20
+    end_times = [None] * 20
+
     while tasks or active_workers:
         if tasks and active_workers < workers:
             n = tasks.pop(0)
             x = [0.0] * n
             w = [0.0] * n
             gauleg(-1.0, 1.0, x, w, n)
+            start_times[n-1] = time.time()
             comm.send((n, x, w), dest=active_workers + 1, tag=1)
             active_workers += 1
         else:
-            n, result = comm.recv(source=MPI.ANY_SOURCE, tag=MPI.ANY_TAG)
+            source_rank, result = comm.recv(source=MPI.ANY_SOURCE, tag=MPI.ANY_TAG)
             active_workers -= 1
-            results[n-1] = result
+            end_times[result[0]-1] = time.time()
+            results[result[0]-1] = result[1]
 
             if tasks:
                 n_next = tasks.pop(0)
                 x_next = [0.0] * n_next
                 w_next = [0.0] * n_next
                 gauleg(-1.0, 1.0, x_next, w_next, n_next)
-                comm.send((n_next, x_next, w_next), dest=MPI.ANY_SOURCE, tag=1)
+                start_times[n_next-1] = time.time()
+                comm.send((n_next, x_next, w_next), dest=source_rank, tag=1)
                 active_workers += 1
 
     # Terminate workers
     for i in range(1, size):
         comm.send(None, dest=i, tag=2)
 
+    # Print the table header
+    print(f"{'Quadrature no.':<15}{'Integration Result':<20}{'Percent Error':<15}{'Run time (s)':<15}")
+    print("-" * 65)
+
+    # Print each row of results
+    for n, result in enumerate(results, start=1):
+        exact = 2 / math.exp(1)
+        error = abs(result - exact) / exact * 100
+        run_time = end_times[n-1] - start_times[n-1]
+        print(f"{n:<15}{result:<20.10f}{error:<15.2f}{run_time:<15.6f}")
+
     # Save results to part2.txt
     with open('part2.txt', 'w') as f:
         for n, result in enumerate(results, start=1):
             exact = 2 / math.exp(1)
             error = abs(result - exact) / exact * 100
-            f.write(f"{n} {result} {error}\n")
+            run_time = end_times[n-1] - start_times[n-1]
+            f.write(f"{n} {result} {error} {run_time}\n")
 
 else:
     while True:
@@ -81,5 +99,5 @@ else:
             break
         n, x, w = task
         integral = sum(w[i] * f(x[i]) for i in range(len(x)))
-        comm.send((n, integral), dest=0, tag=1)
+        comm.send((rank, (n, integral)), dest=0, tag=1)
 
