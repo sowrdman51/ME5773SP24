@@ -1,7 +1,9 @@
 import math
 from mpi4py import MPI
 import numpy as np
+import pandas as pd
 import warnings
+import time
 
 # This code was written by James Smith to perform Gaussian Integration 
 
@@ -55,12 +57,25 @@ if rank == 0:
     for i in range(1,size):
          temp=comm.recv(source=i)
          int_results.append(temp)
-    # Compute the table 
-    print(int_results)
+
+    # Compute the table
+
+        # Sort Reults
+    SortedResults = sorted(int_results, key=lambda x: x[0])
+    # print(SortedResults)
+
+        # Print Table 
+    TableHeaders = ["Quadrature No." , "Integration Result" , "Percent Error" , "Run Time (sec)"]
+    
+    SortedResults.insert(0,TableHeaders)
+    print(pd.DataFrame(SortedResults[1:], columns=SortedResults[0]))
 
 ## --- Worker --- 
+
 else:
-    print(f"Process {rank} starts") #Displays worker ID
+
+    # print(f"Process {rank} starts") #Displays worker ID
+    StartTime = time.time()
 
     # Receive Data
     N_local = comm.bcast(None, root=0)
@@ -80,9 +95,17 @@ else:
     for i in range (0,N_worker):
         sum = sum + w_worker[i]*f(x_worker[i])
     result=sum
+    
+    # Calculate Work Time
+    Work_Time = time.time() - StartTime
+
+    # Calculate % Error
+    PercentError =100*(result - 0.735758882342885)/0.735758882342885
 
     # Send Results to Main
-    comm.send(result, dest=0)
+    comm.send((rank, result, PercentError, Work_Time), dest=0)
 
-
-
+    # Debugging, Delete if code is working I guess 
+    #if rank==1:
+    #    print(N_worker,x_worker,w_worker)
+    #    print(sum)
