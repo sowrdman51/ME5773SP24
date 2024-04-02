@@ -1,5 +1,5 @@
 #!/bin/bash
-# A partial credit gose to ChatGPT 3.5 and full grade goes to P & J!!!!
+# A partial credit gose to ChatGPT 3.5(10%) and full grade goes to P & J!!!!
 #----------------------------------------------------
 # Sample Slurm job script for Arc nodes
 #SBATCH -J myjob # Job Name
@@ -18,12 +18,12 @@
 
 # Execute six instances of twice.sh with different inputs
 # Each instance runs in the background
-./twice.sh 5 &
-./twice.sh 2 &
-./twice.sh 7 &
-./twice.sh 6 &
-./twice.sh 1 &
-./twice.sh 3 &
+srun ./twice.sh 5 &
+srun ./twice.sh 2 &
+srun ./twice.sh 7 &
+srun ./twice.sh 6 &
+srun ./twice.sh 1 &
+srun ./twice.sh 3 &
 
 # Wait for all background processes to finish
 wait
