@@ -19,6 +19,5 @@ module load openmpi
 #module load gcc
 #module swap intel/oneapi gcc/11.2.0
 
-#cd /work/gug303/PhD/cfd/svFSI/aaa/k-pat/k_1/
 
 mpirun -np 360 python Test2James	
