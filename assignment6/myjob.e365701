@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "JamesHW6Sparse.py", line 82, in <module>
+    results = pool.map(TestJames, chunks)
+Traceback (most recent call last):
+  File "JamesHW6Sparse.py", line 82, in <module>
+    results = pool.map(TestJames, chunks)
+  File "/usr/lib64/python2.7/multiprocessing/pool.py", line 250, in map
+  File "/usr/lib64/python2.7/multiprocessing/pool.py", line 250, in map
+    return self.map_async(func, iterable, chunksize).get()
+  File "/usr/lib64/python2.7/multiprocessing/pool.py", line 554, in get
+    return self.map_async(func, iterable, chunksize).get()
+  File "/usr/lib64/python2.7/multiprocessing/pool.py", line 554, in get
+    raise self._value
+AttributeError: 'module' object has no attribute 'csc_array'
+    raise self._value
+AttributeError: 'module' object has no attribute 'csc_array'
+srun: error: c029: tasks 0-1: Exited with exit code 1
