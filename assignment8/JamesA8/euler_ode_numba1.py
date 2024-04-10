@@ -62,7 +62,9 @@ def euler_integration(y0, t0, dt, tmax):
 
     # Implement the for loop required to perform Euler's integration
     #----------
-
+    for i in range(nevals):
+        y[i+1] = dt*int_funct(y[i],t[i]) + y[i]
+        t[i+1] = t[i] + dt
     #----------
     # Do not modify after this line.
 
