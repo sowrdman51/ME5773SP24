@@ -32,6 +32,7 @@ USE searchutils
 
      ! Call the fillSortedArray subroutine to fill arr2 with sorted values.
 
+   CALL fillSortedArray(arr2)
 
    x = arr2(N2-1)   ! Value of interest: Second to last element.
    n = SIZE(arr2,1)
@@ -40,7 +41,9 @@ USE searchutils
    CALL CPU_TIME(t_start) ! Start measuring time here
    idx = linearsearch(arr2,n,x)
    ! Complete the CPU TIME measrurement 
-  
+   CALL CPU_TIME(t_end)   ! END TIME
+   print*, "Linerar CPU TIME WAS: ",t_end-t_start 
+   
    ! Idx must be the second to last elemetn.
    print*, "Index computed with linear search: ", idx , N2-1
    print*, "was the value found?: ", arr2(idx)==x
@@ -48,29 +51,30 @@ USE searchutils
    ! Measure the CPU time of this binarysearch function.
    CALL CPU_TIME(t_start) ! Start measuring time here
    idx = binarysearch(arr2,n,x)
-   ! Complete the CPU TIME measrurement 
+   ! Complete the CPU TIME measrurement
+   CALL CPU_TIME(t_end)   ! END TIME
+   print*, "Binary CPU TIME WAS: ",t_end-t_start 
 
    print*, "Index computed with binary search: ", idx, N2-1
    print*, "was the value found?: ", arr2(idx)==x
   
 
+   ! Uncomment lines 56-71 to the behavior with unsorted arrays.
 
-  ! ! Uncomment lines 56-71 to the behavior with unsorted arrays.
-
-  ! print*, " -------------------------- "
-  ! print*, "Testing on an unsorted array"
+   print*, " -------------------------- "
+   print*, "Testing on an unsorted array"
 
   
-  ! ! Call the fillUnsortedArray subroutine to fill arr2 with unsorted values.
+   ! Call the fillUnsortedArray subroutine to fill arr2 with unsorted values.
+   CALL fillUnsortedArray(arr2)
 
+   x = arr2(N2/2-1) ! Value of interest: midle element -1.
+   n = SIZE(arr2,1)
 
-  ! x = arr2(N2/2-1) ! Value of interest: midle element -1.
-  ! n = SIZE(arr2,1)
+   idx = linearsearch(arr2,n,x)
 
-  ! idx = linearsearch(arr2,n,x)
-
-  ! print*, "Index computed with linear search: ", idx
-  ! print*, "was the value found?: ", arr2(idx)==x
+   print*, "Index computed with linear search: ", idx
+   print*, "was the value found?: ", arr2(idx)==x
 
 CONTAINS
   
