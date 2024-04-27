@@ -10,7 +10,7 @@ contains
 ! Find idx such that arr(idx) == x
 !
 FUNCTION linearSearch(arr, n, x) RESULT(idx)
-   REAL(8) :: arr(n)  ! Array to search
+   REAL(8), DIMENSION(n) :: arr(n)  ! Array to search
    INTEGER :: n       ! Number of elements in array.
    REAL(8) :: x       ! Value to search for in array.
    INTEGER :: idx     ! Result of the search. [arr(idx) == x]
@@ -32,7 +32,7 @@ END FUNCTION linearSearch
 ! Find idx such that arr(idx) == x
 !
 FUNCTION  binarySearch(arr, n, x) RESULT(idx)
-   REAL(8) :: arr(n)  ! Array to search
+   REAL(8), DIMENSION(n) :: arr(n)  ! Array to search
    INTEGER :: n       ! Number of elements in array.
    REAL(8) :: x       ! Value to search for in array.
    INTEGER :: idx     ! Result of the search. [arr(idx) == x]
