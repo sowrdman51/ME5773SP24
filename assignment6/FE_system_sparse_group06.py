@@ -1,6 +1,7 @@
 import numpy as np
 import time
 from multiprocessing import Pool
+from scipy.sparse import lil_matrix
 
 def assemble_worker(args):
     e, k_list, Ne1, Ne2 = args
@@ -39,7 +40,7 @@ def elasticFEProblem(Ndof, Ne1, Ne2, k_list):
                  x-^^-x-^^-x-^^-x...x-^^-x-^^-x-^^-x
     """
 
-    Kg = np.zeros((Ndof, Ndof))
+    Kg = lil_matrix((Ndof, Ndof))
     fg = np.zeros(Ndof)
 
     for e in range(Ne1, Ne2):
@@ -67,7 +68,7 @@ if __name__ == '__main__':
 
     results = pool.map(assemble_worker, chunks)
 
-    Kg = np.zeros((Ndof, Ndof))
+    Kg = lil_matrix((Ndof, Ndof))
     fg = np.zeros(Ndof)
     for Kg_local, fg_local in results:
         for i in range(2):

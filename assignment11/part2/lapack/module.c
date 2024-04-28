@@ -19952,6 +19952,7 @@ static PyObject *__pyx_pf_6module_2mkl_solver(CYTHON_UNUSED PyObject *__pyx_self
   Py_ssize_t __pyx_t_9;
   Py_ssize_t __pyx_t_10;
   Py_ssize_t __pyx_t_11;
+  int __pyx_t_12;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
@@ -20059,7 +20060,7 @@ static PyObject *__pyx_pf_6module_2mkl_solver(CYTHON_UNUSED PyObject *__pyx_self
  *                           &A[0,0], lda, &ipiv_memview[0],
  *                           &B[0,0], ldb )             # <<<<<<<<<<<<<<
  * 
- * # end function
+ *     #if info != 0:
  */
   __pyx_t_10 = 0;
   __pyx_t_11 = 0;
@@ -20073,6 +20074,48 @@ static PyObject *__pyx_pf_6module_2mkl_solver(CYTHON_UNUSED PyObject *__pyx_self
  */
   (void)(LAPACKE_dgesv(__pyx_v_matrix_layout, __pyx_v_n, __pyx_v_nrhs, (&(*((double *) ( /* dim=1 */ ((char *) (((double *) ( /* dim=0 */ (__pyx_v_A.data + __pyx_t_7 * __pyx_v_A.strides[0]) )) + __pyx_t_8)) )))), __pyx_v_lda, (&(*((int64_t *) ( /* dim=0 */ (__pyx_v_ipiv_memview.data + __pyx_t_9 * __pyx_v_ipiv_memview.strides[0]) )))), (&(*((double *) ( /* dim=1 */ ((char *) (((double *) ( /* dim=0 */ (__pyx_v_B.data + __pyx_t_10 * __pyx_v_B.strides[0]) )) + __pyx_t_11)) )))), __pyx_v_ldb));
 
+  /* "module.pyx":108
+ *     #if info != 0:
+ *     #	raise ValueError("Solving failed with error code: %d" % info)
+ *     return np.asarray(B)             # <<<<<<<<<<<<<<
+ * 
+ * # end function
+ */
+  __Pyx_XDECREF(__pyx_r);
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 108, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_asarray); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 108, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_1 = __pyx_memoryview_fromslice(__pyx_v_B, 2, (PyObject *(*)(char *)) __pyx_memview_get_double, (int (*)(char *, PyObject *)) __pyx_memview_set_double, 0);; if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 108, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_2 = NULL;
+  __pyx_t_12 = 0;
+  #if CYTHON_UNPACK_METHODS
+  if (unlikely(PyMethod_Check(__pyx_t_3))) {
+    __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_3);
+    if (likely(__pyx_t_2)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_2);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_3, function);
+      __pyx_t_12 = 1;
+    }
+  }
+  #endif
+  {
+    PyObject *__pyx_callargs[2] = {__pyx_t_2, __pyx_t_1};
+    __pyx_t_5 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_12, 1+__pyx_t_12);
+    __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 108, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_5);
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  }
+  __pyx_r = __pyx_t_5;
+  __pyx_t_5 = 0;
+  goto __pyx_L0;
+
   /* "module.pyx":70
  *     return np.asarray(B)
  * 
@@ -20082,8 +20125,6 @@ static PyObject *__pyx_pf_6module_2mkl_solver(CYTHON_UNUSED PyObject *__pyx_self
  */
 
   /* function exit code */
-  __pyx_r = Py_None; __Pyx_INCREF(Py_None);
-  goto __pyx_L0;
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_2);

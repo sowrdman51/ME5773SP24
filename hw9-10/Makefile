@@ -25,4 +25,4 @@ main_program.exe: main_program.f90
 
 
 clean:
-	rm -f *.exe *.o *.mod *.a
+	rm -f *.exe *.o *.mod
