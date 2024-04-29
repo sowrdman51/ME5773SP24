@@ -20060,7 +20060,11 @@ static PyObject *__pyx_pf_6module_2mkl_solver(CYTHON_UNUSED PyObject *__pyx_self
  *                           &A[0,0], lda, &ipiv_memview[0],
  *                           &B[0,0], ldb )             # <<<<<<<<<<<<<<
  * 
+<<<<<<< HEAD
  *     # if info != 0:
+=======
+ *     #if info != 0:
+>>>>>>> af74c154765aa3631f9e100adeafd3f9be553644
  */
   __pyx_t_10 = 0;
   __pyx_t_11 = 0;
@@ -20075,8 +20079,13 @@ static PyObject *__pyx_pf_6module_2mkl_solver(CYTHON_UNUSED PyObject *__pyx_self
   (void)(LAPACKE_dgesv(__pyx_v_matrix_layout, __pyx_v_n, __pyx_v_nrhs, (&(*((double *) ( /* dim=1 */ ((char *) (((double *) ( /* dim=0 */ (__pyx_v_A.data + __pyx_t_7 * __pyx_v_A.strides[0]) )) + __pyx_t_8)) )))), __pyx_v_lda, (&(*((int64_t *) ( /* dim=0 */ (__pyx_v_ipiv_memview.data + __pyx_t_9 * __pyx_v_ipiv_memview.strides[0]) )))), (&(*((double *) ( /* dim=1 */ ((char *) (((double *) ( /* dim=0 */ (__pyx_v_B.data + __pyx_t_10 * __pyx_v_B.strides[0]) )) + __pyx_t_11)) )))), __pyx_v_ldb));
 
   /* "module.pyx":108
+<<<<<<< HEAD
  *     # if info != 0:
  *     # 	raise ValueError("Solving failed with error code: %d" % info)
+=======
+ *     #if info != 0:
+ *     #	raise ValueError("Solving failed with error code: %d" % info)
+>>>>>>> af74c154765aa3631f9e100adeafd3f9be553644
  *     return np.asarray(B)             # <<<<<<<<<<<<<<
  * 
  * # end function
