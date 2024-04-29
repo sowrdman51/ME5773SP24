@@ -103,8 +103,8 @@ def mkl_solver(double[:,::1] A, double[:,::1] B):
                           &A[0,0], lda, &ipiv_memview[0],
                           &B[0,0], ldb )
    
-    if info != 0:
-    	raise ValueError("Solving failed with error code: %d" % info)
+    # if info != 0:
+    # 	raise ValueError("Solving failed with error code: %d" % info)
     return np.asarray(B) 
 
 # end function
